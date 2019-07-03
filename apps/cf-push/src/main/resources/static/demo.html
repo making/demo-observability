@@ -5,14 +5,17 @@
 <body>
 <div>
     <pre style="width: 100%;letter-spacing:-0.2em;line-height: 1em;"><code id="output"></code></pre>
+    <p id="bottom""></p>
 </div>
 <script>
     var eventSource = new EventSource("/");
     var output = document.getElementById('output');
+    var bottom = document.getElementById('bottom');
     eventSource.onmessage = function (e) {
         var text = output.innerText;
         text = text + e.data + '\n';
         output.innerText = text;
+        window.scrollTo(0, bottom.offsetTop);
     }
 </script>
 </body>
