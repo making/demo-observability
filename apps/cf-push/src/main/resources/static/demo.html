@@ -1,0 +1,19 @@
+<html lang="ja">
+<head>
+    <title>CF PUSH</title>
+</head>
+<body>
+<div>
+    <pre style="width: 100%;letter-spacing:-0.2em;line-height: 1em;"><code id="output"></code></pre>
+</div>
+<script>
+    var eventSource = new EventSource("/");
+    var output = document.getElementById('output');
+    eventSource.onmessage = function (e) {
+        var text = output.innerText;
+        text = text + e.data + '\n';
+        output.innerText = text;
+    }
+</script>
+</body>
+</html>
