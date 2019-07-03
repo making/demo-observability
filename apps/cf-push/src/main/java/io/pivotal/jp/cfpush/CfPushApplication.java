@@ -54,7 +54,7 @@ public class CfPushApplication {
 
         private final String push;
 
-        public Props(@DefaultValue("http://localhost:9001") String cf, @DefaultValue("http://localhost:9002") String push) {
+        public Props(@DefaultValue("http://localhost:9003") String cf, @DefaultValue("http://localhost:9008") String push) {
             this.cf = cf;
             this.push = push;
         }
